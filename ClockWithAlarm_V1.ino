@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h>
 #include <TimeLib.h>
 
-//screen pins declaration
+//screen pins
 const byte lcdRs = 2;
 const byte lcdEn = 3;
 const byte lcdD4 = 4;
@@ -11,6 +11,7 @@ const byte lcdD7 = 7;
 const byte scrRows = 2;
 const byte scrColumns = 16;
 
+//buttons pins
 const byte buttonChange = 10;
 const byte buttonUp = 11;
 const byte buttonDown = 9;
@@ -19,9 +20,7 @@ const byte buzzer = 8;
 
 int delayTime = 1000;
 
-
-
-//zadeklaruj wyprowadzenia dla wyswietlacza "lcd"
+//"lcd" display declaration with proper arguments
 LiquidCrystal lcd(lcdRs, lcdEn, lcdD4, lcdD5, lcdD6, lcdD7);
 
 void setup() {
@@ -45,15 +44,12 @@ void setup() {
   }
 
   delay(delayTime * 2);
-
-
-  //poczatkowe ustawienie zegara
-
+ 
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+//Purpose of V1 is to check connections and if hardware behaves as wanted  
   while(digitalRead(buttonChange) == LOW){
     lcd.clear();
     lcd.setCursor(0, 0);
@@ -84,14 +80,7 @@ void loop() {
   delay(delayTime / 5);
 }
 
-void setClock(){
-
-}
-
-void setAlarm(){
-
-}
-
-void alarm(){
-
-}
+//planned functions
+// void setClock(){}
+// void setAlarm(){}
+// void alarm(){}
